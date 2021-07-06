@@ -33,7 +33,7 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
 
   <body>
     <div class="form-wrapper text-center">
-      <form class="form-signin" action="update-form.php?id=<?= $task['id'];?>" method="POST" enctype="multipart/form-data">
+      <form class="form-signin" action="update_form.php?id=<?= $task['id'];?>" method="POST" enctype="multipart/form-data">
         <img class="mb-4" src="assets/img/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Изменить запись <?= $task['id'];?></h1>
         <label for="inputText" class="sr-only">Название</label>

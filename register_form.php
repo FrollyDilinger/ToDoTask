@@ -25,7 +25,7 @@
         <label for="inputPassword" class="sr-only">Пароль</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" name="password">
         <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Зарегистрироваться</button>
-        <a href="login-form.php">Войти</a>
+        <a href="login_form.php">Войти</a>
 
     </form>
 </div>

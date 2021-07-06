@@ -41,4 +41,4 @@ if(!$result) {
     exit;
 }
 //Переадресация на страницу авторизации
-header('Location: login-form.php');
+header('Location: login_form.php');

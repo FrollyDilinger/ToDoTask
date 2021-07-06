@@ -65,7 +65,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
             <h3 class="jumbotron-heading">Привет, <?php echo $_SESSION['user_name']; ?></h3>
             <p class="lead text-muted">Этот проект позвляет выдавать задания, пока что самому себе</p>
             <p>
-                <a href="create-form.php" class="btn btn-primary my-2">Добавить запись</a>
+                <a href="create_form.php" class="btn btn-primary my-2">Добавить запись</a>
             </p>
 
         </div>
@@ -85,7 +85,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="btn-group">
                                         <a href="show.php?id=<?= $task['id']; ?>"
                                            class="btn btn-sm btn-outline-secondary">Подробнее</a>
-                                        <a href="edit-form.php?id=<?= $task['id']; ?>"
+                                        <a href="edit_form.php?id=<?= $task['id']; ?>"
                                            class="btn btn-sm btn-outline-secondary">Изменить</a>
                                         <a href="delete.php?id=<?= $task['id']; ?>"
                                            class="btn btn-sm btn-outline-secondary" onclick="confirm('Вы уверены?')">Удалить</a>
