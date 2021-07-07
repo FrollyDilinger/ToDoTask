@@ -68,7 +68,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div class="container">
 
             <h3 class="jumbotron-heading">Привет, <?php echo $_SESSION['user_name']; ?></h3>
-            <p class="lead text-muted">Этот проект позвляет выдавать задания, пока что самому себе</p>
+            <p class="lead text-muted">Этот проект позвляет выдавать задания, одному человеку по его id</p>
             <p>
                 <a href="create_form.php" class="btn btn-primary my-2">Добавить запись</a>
             </p>
