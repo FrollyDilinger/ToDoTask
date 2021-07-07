@@ -7,6 +7,7 @@ require "connect_to_db.php";
 $username = trim($_POST['username']);
 $login = trim($_POST['login']);
 $password = trim($_POST['password']);
+$email = trim($_POST['email']);
 
 //Валидация на пустоту полей
 foreach ($_POST as $input) {
@@ -28,7 +29,7 @@ if($user) {
 }
 
 //Запись введенных данных пользователя в БД
-$sql = "INSERT INTO users (username, login, password) VALUES (:username, :login, :password)";
+$sql = "INSERT INTO users (username, login, password, email, status) VALUES (:username, :login, :password,:email, 'user' )";
 $statement = $pdo->prepare($sql);
 
 //кодировка пароля в md5

@@ -1,13 +1,18 @@
 <?php
 session_start();
+if ($_SESSION['status'] == 'user'){
+        header("Location: listUser.php");
+        };
+
+
 //Подключаем соединение с БД
 require "connect_to_db.php";
 //Соединяемся с БД и достать юзера по id
 //$pdo = new PDO("mysql:host=localhost;dbname=todo;charset=utf8", "root", "root");
-$sql = "SELECT id, content FROM tasks WHERE user_id=:user_id";
+$sql = "SELECT id, content FROM tasks WHERE admin_id=:admin_id";
 $statement = $pdo->prepare($sql);
 //привязка к сессии id пользователя
-$statement->bindParam(":user_id", $_SESSION['user_id']);
+$statement->bindParam(":admin_id", $_SESSION['user_id']);
 $statement->execute();
 $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 

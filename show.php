@@ -6,6 +6,7 @@ $statement = $pdo->prepare($sql);
 $statement->bindParam(":id", $_GET['id']);
 $statement->execute();
 $task = $statement->fetch(PDO::FETCH_ASSOC);
+
 ?>
 <!doctype html>
 <html lang="ru">
@@ -30,6 +31,8 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
         </h1>
 
       <h2><?= $task['id'];?></h2>
+
+
       <p><?= $task['content'];?></p>
         <a href="list.php">Назад</a>
     </div>

@@ -6,7 +6,8 @@ require "connect_to_db.php";
 session_start();
 $login = trim($_POST['login']);
 $password = trim($_POST['password']);
-$remember = $_POST['rememberme'];
+$remember = $_POST['rememberMe'];
+
 
 //если нажат чекбокс Запомнить меня, то записываем пользователя в сессию на 30 дней
 if(isset($remember) AND $remember == "yes"){
@@ -22,7 +23,7 @@ foreach ($_POST as $input) {
 }
 //Подготовка и выполнение запроса к БД
 //$pdo = new PDO('mysql:host=localhost;dbname=todo', 'root', 'root');
-$sql = 'SELECT id, login, username FROM users WHERE login=:login AND password=:password';
+$sql = 'SELECT id, login, username,status FROM users WHERE login=:login AND password=:password';
 $statement = $pdo->prepare($sql);
 
 //Хеширование пароля в md5
@@ -34,6 +35,7 @@ $statement->execute();
 //получаем результат в виде ассоциативного массива
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
+
 //Не нашли пользователя
 if(!$user) {
 	$errorMessage = "Неверный логин и пароль";
@@ -44,8 +46,15 @@ if(!$user) {
 $_SESSION['user_id'] = $user['id'];
 $_SESSION['login'] = $user['login'];
 $_SESSION['user_name'] = $user['username'];
-
+$_SESSION['status'] = $user['status'];
+if ($_SESSION['status'] == 'user'){
+    header("Location: listUser.php");
+}
+else
+{
+    header("Location: list.php");
+}
 
 //Переадресация
-header("Location: list.php");
+
 

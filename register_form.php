@@ -24,6 +24,8 @@
         <input type="text" id="inputLogin" name="login" class="form-control" placeholder="login" required>
         <label for="inputPassword" class="sr-only">Пароль</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" name="password">
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email">
         <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Зарегистрироваться</button>
         <a href="login_form.php">Войти</a>
 
